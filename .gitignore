@@ -1,0 +1,6 @@
+# vim swap files
+*.sw[po]
+
+# latex
+*.log
+*.aux
