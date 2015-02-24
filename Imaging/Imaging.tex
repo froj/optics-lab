@@ -30,6 +30,48 @@
 \include{titlepage}
 \section{Procedures and results}
 \subsection{Saturation and intensity adjustment of the camera}
+
+The camera can take pictures with auto-adjustment of the exposure.
+The sensor saturates in this mode at the windows and at the reflections on the curtains statements.
+Diminishing manually the exposure, the colors are perceptible instead of saturations.
+The blue sky is visible on the picture without saturations.
+We noticed also that details under the desks are lost in the darkness.
+We have to do some compromises between saturations and obscurity.
+The intensity is studied on a horizontal line of pixels.
+The saturation is detects when the value exceeds the limit of the sensor whether 254.
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[p]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/auto}
+        \caption{Automatic exposure and gain.}
+    \end{subfigure}
+    \begin{subfigure}[p]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/auto_int}
+        \caption{Intensity plot at $y=300$.}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}[p]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/little_sat}
+        \caption{Only a couple of pixels are saturated.}
+    \end{subfigure}
+    \begin{subfigure}[p]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/little_int}
+        \caption{Intensity plot at $y=300$.}
+    \end{subfigure}
+    \centering
+    \begin{subfigure}[p]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/no_sat}
+        \caption{No saturation at all.}
+    \end{subfigure}
+    \begin{subfigure}[p]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/no_sat_int}
+        \caption{Intensity plot at $y=300$.}
+    \end{subfigure}
+    \caption{Comparison of different exposure times.}
+\label{fig:saturation}
+\end{figure}
+
 \subsection{Procedure to measure the focal length}
 
 First, we measure the magnification at two different focus settings.
