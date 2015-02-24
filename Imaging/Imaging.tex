@@ -164,6 +164,98 @@ We consider $\Delta s_O = \SI{0.25}{\milli\meter}$ and $\Delta d_O = \SI{0.5}{\m
 \end{equation}
 
 \subsection{Measurement of the F\# number}
+Using a laser beam collimated by a focal lens, we determine the F\# number by measuring the diameter of the laser spot on the pictures we took with the camera.
+The diameter's variation with a change of focus is used to calculate the angle of acceptance of the system.
+This angle allows us to get the \emph{numerical aperture} (NA) and the F\# number.
+The diameter of the spot is measured by counting pixels.
+We know that the image covers 1600 pixels and is \SI{4.536}{\milli\meter} wide.
+With this relatively precise method we can limit the error to 3 pixels (or \SI{9}{\micro\meter}).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/focus.jpg}
+        \caption{Spot of the focused laser beam.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/050.jpg}
+        \caption{Spot after defocusing by half a turn.}
+    \end{subfigure}
+    \caption{Measuring the spot size to calculate the acceptance angle.}
+\label{fig:spot}
+\end{figure}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{S[table-format=1.2] S[table-format=1.3] S[table-format=2] S[table-format=1.3]}
+        \toprule
+        {Turn} & {Relative focus distance $z_i$ (\SI{}{\milli\meter})} & {Spot diameter $d_i$ (px)} & {(\SI{}{\milli\meter})} \\
+        \midrule
+        0    & 0     &  5 & 0.014 \\
+        0.25 & 0.083 & 16 & 0.045 \\
+        0.5  & 0.167 & 30 & 0.085 \\
+        0.75 & 0.250 & 43 & 0.122 \\
+        1    & 0.333 & 57 & 0.162 \\
+        1.25 & 0.416 & 73 & 0.207 \\
+
+        \bottomrule
+    \end{tabular}
+    \caption{F\#}
+\label{tab:f_number}
+\end{table}
+
+A linear regression of the values in table~\ref{tab:f_number} yields $ \frac{d-d_0}{z} \approx 0.463 $~(figure~\ref{fig:f_number}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{img/f_number.png}
+    \caption{Diameters of the spots measured for different distances to the focal point.}
+\label{fig:f_number}
+\end{figure}
+
+\begin{equation}
+    u = \arctan{\frac{d - d_0}{2 z}} = \SI{}{\degree}
+    \label{equ:acceptance_angle}
+\end{equation}
+
+\begin{equation}
+    \Delta u = \frac{z}{{\left(d-d_0\right)}^2 + z^2} 2 \Delta \left(d-d_0\right)
+    + \frac{d-d_0}{{\left(d-d_0\right)}^2 + z^2} \Delta z = \SI{}{\degree}
+    \label{equ:acceptance_angle_err}
+\end{equation}
+
+\begin{equation}
+    \frac{\Delta u}{u} = \SI{}{\percent}
+    \label{equ:acceptance_angle_err_percent}
+\end{equation}
+
+\begin{equation}
+    \mbox{NA} = n \sin{u} = 
+    \label{equ:numerical_aperture}
+\end{equation}
+
+\begin{equation}
+    \Delta \mbox{NA} = \cos{u} \Delta u = 
+    \label{equ:numerical_aperture_err}
+\end{equation}
+
+\begin{equation}
+    \mbox{F\#} = \frac{1}{2 \mbox{NA}} = 
+    \label{equ:f_number}
+\end{equation}
+
+\begin{equation}
+    \Delta \mbox{F\#} = \frac{\Delta \mbox{NA}}{2 \mbox{NA}^2}  = 
+    \label{equ:f_number_err}
+\end{equation}
+
+\begin{equation}
+    \frac{\Delta \mbox{F\#}}{\mbox{F\#}} = \frac{\Delta \mbox{NA}}{\mbox{NA}}
+        = \SI{}{\percent}
+    \label{equ:f_number_err_precent}
+\end{equation}
+
 \subsection{Example from real world}
 
 
