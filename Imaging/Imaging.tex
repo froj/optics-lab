@@ -30,47 +30,49 @@
 \include{titlepage}
 \section{Procedures and results}
 \subsection{Saturation and intensity adjustment of the camera}
+\label{sec:saturation}
 
-The camera can take pictures with auto-adjustment of the exposure.
-The sensor saturates in this mode at the windows and at the reflections on the curtains statements.
-Diminishing manually the exposure, the colors are perceptible instead of saturations.
-The blue sky is visible on the picture without saturations.
+The camera can auto-adjust the exposure and gain.
+The sensor saturates in this mode at the windows and at the reflections on the curtains~(figure~\ref{fig:auto}).
+Reducing manually the exposure decreases the amount of saturation and the colors become perceptible.
+The blue sky is visible on the picture without saturations~(figure~\ref{fig:no_sat}).
 We noticed also that details under the desks are lost in the darkness.
 We have to do some compromises between saturations and obscurity.
 The intensity is studied on a horizontal line of pixels.
-The saturation is detects when the value exceeds the limit of the sensor whether 254.
+The saturation means that he value of the intensity exceeds the sensor's limit of 255.
 
 \begin{figure}[h]
     \centering
-    \begin{subfigure}[p]{0.45\textwidth}
+    \begin{subfigure}[p]{0.40\textwidth}
         \includegraphics[width=\textwidth]{img/auto}
         \caption{Automatic exposure and gain.}
+\label{fig:auto}
     \end{subfigure}
-    \begin{subfigure}[p]{0.45\textwidth}
+    \begin{subfigure}[p]{0.40\textwidth}
         \includegraphics[width=\textwidth]{img/auto_int}
         \caption{Intensity plot at $y=300$.}
     \end{subfigure}
-    \centering
-    \begin{subfigure}[p]{0.45\textwidth}
+    \begin{subfigure}[p]{0.40\textwidth}
         \includegraphics[width=\textwidth]{img/little_sat}
         \caption{Only a couple of pixels are saturated.}
     \end{subfigure}
-    \begin{subfigure}[p]{0.45\textwidth}
+    \begin{subfigure}[p]{0.40\textwidth}
         \includegraphics[width=\textwidth]{img/little_int}
         \caption{Intensity plot at $y=300$.}
     \end{subfigure}
-    \centering
-    \begin{subfigure}[p]{0.45\textwidth}
+    \begin{subfigure}[p]{0.40\textwidth}
         \includegraphics[width=\textwidth]{img/no_sat}
         \caption{No saturation at all.}
+\label{fig:no_sat}
     \end{subfigure}
-    \begin{subfigure}[p]{0.45\textwidth}
+    \begin{subfigure}[p]{0.40\textwidth}
         \includegraphics[width=\textwidth]{img/no_sat_int}
         \caption{Intensity plot at $y=300$.}
     \end{subfigure}
     \caption{Comparison of different exposure times.}
 \label{fig:saturation}
 \end{figure}
+
 
 \subsection{Procedure to measure the focal length}
 
@@ -79,7 +81,7 @@ For that, we take pictures of a ruler, which gives us the \emph{object size} $s_
 The \emph{image size} $s_I$ is constant and given by size of the camera sensor.
 We then use equation~\ref{equ:magnification} to calculate the magnification.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{img/focale1.jpg}
@@ -105,14 +107,14 @@ We consider the measurement error of the image size $\Delta s_I$ negligible, and
     \label{equ:magnification_err}
 \end{equation}
 
-\begin{table}[h]
+\begin{table}[H]
     \centering
-    \begin{tabular}{c r r r r c r r}
+    \begin{tabular}{c S[table-format=1.1] S[table-format=1.3] S[table-format=1.4] S[table-format=1.2] c S[table-format=1.2] S[table-format=1.2]}
         \toprule
-        No. & Object size $s_O$ & Image size $s_I$ & $m$ & $\Delta s_O$ & $\Delta s_I$ & $\Delta m$ & $\frac{\Delta m}{m}$ \\
+        {No.} & {Object size $s_O$} & {Image size $s_I$} & {$m$} & {$\Delta s_O$} & {$\Delta s_I$} & {$\Delta m$} & {$\frac{\Delta m}{m}$} \\
         \midrule
-        A & \SI{96}{\milli\meter} & \SI{4.535}{\milli\meter} & \num{0.0472} & \SI{0.25}{\milli\meter} & - & \num{1.23e-4} & 0.25\% \\
-        B & \SI{35.5}{\milli\meter} & \SI{4.535}{\milli\meter} & \num{0.128} & \SI{0.25}{\milli\meter} & - & \num{9.00e-4} & 0.70\% \\
+        A & \SI{96.0}{\milli\meter} & \SI{4.535}{\milli\meter} & \num{0.0472} & \SI{0.25}{\milli\meter} & $-$ & \num{1.23e-4} & 0.25\% \\
+        B & \SI{35.5}{\milli\meter} & \SI{4.535}{\milli\meter} & \num{0.128} & \SI{0.25}{\milli\meter} & $-$ & \num{9.00e-4} & 0.70\% \\
         \bottomrule
     \end{tabular}
     \caption{Magnifications for two different foci and their errors.}
@@ -127,11 +129,11 @@ The focal length is given by equation~\ref{equ:focal_length} with $ d_{IB} - d_{
     \label{equ:focal_length}
 \end{equation}
 
-Considering we screwed the objective a full turn with a precision of \SI{10}{\degree} then $\Delta \left(d_{IB} - d_{IA}\right) = \SI{9.25e-3}{\milli\meter}$.
+Considering we screwed the objective a full turn with a precision of \SI{10}{\degree} then $\Delta \left(d_{IB} - d_{IA}\right) = \SI{9.25}{\micro\meter}$.
 
 \begin{equation}
     \Delta f = \frac{1}{m_B - m_A} \Delta \left(d_{IB} - d_{IA}\right)
-        + \frac{d_{IB} - d_{IA}}{\left(m_B - m_A\right)^2}
+    + \frac{d_{IB} - d_{IA}}{{\left(m_B - m_A\right)}^2}
         \left(\Delta m_A + \Delta m_B\right) = \SI{0.167}{\milli\meter}
     \label{equ:focal_length_err}
 \end{equation}
@@ -142,8 +144,8 @@ Considering we screwed the objective a full turn with a precision of \SI{10}{\de
 \end{equation}
 
 \subsection{Measurement of the field of view}
-We measured the object size $s_O = \SI{54.5}{\milli\meter}$ and the distance to the objective $d_O = \SI{46}{\milli\meter}$ with a ruler.
-Simple trigonometry yeilds equation~\ref{equ:view_angle}.
+We measured the object size $s_O = \SI{54.5}{\milli\meter}$ and the distance to the objective $d_O = \SI{46.0}{\milli\meter}$ with a ruler.
+Simple trigonometry yields equation~\ref{equ:view_angle}.
 
 \begin{equation}
     \alpha = 2 \arctan{\frac{s_O}{2 d_O}} = \SI{61.3}{\degree}
@@ -169,16 +171,16 @@ The diameter's variation with a change of focus is used to calculate the angle o
 This angle allows us to get the \emph{numerical aperture} (NA) and the F\# number.
 The diameter of the spot is measured by counting pixels.
 We know that the image covers 1600 pixels and is \SI{4.536}{\milli\meter} wide.
-With this relatively precise method we can limit the error to 3 pixels (or \SI{9}{\micro\meter}).
+With this method we can limit the error of the spot diameter to 3 pixels (or \SI{9}{\micro\meter}) and the error of the relative focus distance to \SI{10}{\degree}, which corresponds to \SI{9.25}{\micro\meter}.
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{img/focus.jpg}
+        \includegraphics[width=\textwidth]{img/focus_cropped}
         \caption{Spot of the focused laser beam.}
     \end{subfigure}
     \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{img/050.jpg}
+        \includegraphics[width=\textwidth]{img/050_cropped}
         \caption{Spot after defocusing by half a turn.}
     \end{subfigure}
     \caption{Measuring the spot size to calculate the acceptance angle.}
@@ -201,7 +203,7 @@ With this relatively precise method we can limit the error to 3 pixels (or \SI{9
 
         \bottomrule
     \end{tabular}
-    \caption{F\#}
+    \caption{Measurements taken to determine the F\# number.}
 \label{tab:f_number}
 \end{table}
 
@@ -215,50 +217,62 @@ A linear regression of the values in table~\ref{tab:f_number} yields $ \frac{d-d
 \end{figure}
 
 \begin{equation}
-    u = \arctan{\frac{d - d_0}{2 z}} = \SI{}{\degree}
+    u = \arctan{\frac{d - d_0}{2 z}} = \SI{13}{\degree}
     \label{equ:acceptance_angle}
 \end{equation}
 
+We use the measurement with the furthest relative focus distance and the greatest spot diameter to calculate the maximal error.
+
 \begin{equation}
-    \Delta u = \frac{z}{{\left(d-d_0\right)}^2 + z^2} 2 \Delta \left(d-d_0\right)
-    + \frac{d-d_0}{{\left(d-d_0\right)}^2 + z^2} \Delta z = \SI{}{\degree}
+    \Delta u = \frac{z_5}{{\left(d_5-d_0\right)}^2 + z_5^2} 2 \Delta \left(d_5-d_0\right)
+    + \frac{d_5-d_0}{{\left(d_5-d_0\right)}^2 + z_5^2} \Delta z_5 = \SI{2.41}{\degree}
     \label{equ:acceptance_angle_err}
 \end{equation}
 
 \begin{equation}
-    \frac{\Delta u}{u} = \SI{}{\percent}
+    \frac{\Delta u}{u} = \SI{18.6}{\percent}
     \label{equ:acceptance_angle_err_percent}
 \end{equation}
 
 \begin{equation}
-    \mbox{NA} = n \sin{u} = 
+    \mbox{NA} = n \sin{u} = 0.23
     \label{equ:numerical_aperture}
 \end{equation}
 
 \begin{equation}
-    \Delta \mbox{NA} = \cos{u} \Delta u = 
+    \Delta \mbox{NA} = \cos{u} \Delta u = 0.041
     \label{equ:numerical_aperture_err}
 \end{equation}
 
 \begin{equation}
-    \mbox{F\#} = \frac{1}{2 \mbox{NA}} = 
+    \mbox{F\#} = \frac{1}{2 \mbox{NA}} = 2.2
     \label{equ:f_number}
 \end{equation}
 
 \begin{equation}
-    \Delta \mbox{F\#} = \frac{\Delta \mbox{NA}}{2 \mbox{NA}^2}  = 
-    \label{equ:f_number_err}
-\end{equation}
-
-\begin{equation}
     \frac{\Delta \mbox{F\#}}{\mbox{F\#}} = \frac{\Delta \mbox{NA}}{\mbox{NA}}
-        = \SI{}{\percent}
+        = \SI{18.1}{\percent}
     \label{equ:f_number_err_precent}
 \end{equation}
 
 \subsection{Example from real world}
 
+Large aperture objectives can take pictures in relatively dark conditions without flash. 
+The \emph{Canon EF 50mm f/1.2L USM} is an example of it. 
+His large aperture allows the selection of a precise depth of field while blurring the rest~(figure~\ref{fig:real_world}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/real_world.jpg}
+    \caption{A picture taken with the \emph{Canon EF 50mm f/1.2L USM} objective showing the very distinct depth of field.}
+\label{fig:real_world}
+\end{figure}
 
 \section{Discussion and conclusions}
-\lipsum[6]
+
+In Section~\ref{sec:saturation} we saw that maladjusted exposure time and gain can lead to information loss.
+Further, we could measure optical properties of a real life optical system and experience the difficulties thereof.
+The estimation of the error revealed that it is quite easy to determine a precise value for the \emph{angle of view}, but it takes some more effort for the \emph{focal length}.
+The general formula for linear error propagation didn't yield realistic results for the angle of acceptance, as it was determined by a linear regression of a set of values.
+
 \end{document}
