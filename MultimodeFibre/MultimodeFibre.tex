@@ -1,0 +1,40 @@
+% Déclaration du type de document (report, book, paper, etc...)
+\documentclass[a4paper, 12pt]{paper} 
+ 
+% Package pour avoir Latex en français
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+ 
+% Quelques packages utiles
+\usepackage{listings} % Pour afficher des listings de programmes
+\usepackage{graphicx} % Pour afficher des figures
+\usepackage{amsthm}   % Pour créer des théorèmes et des définitions
+\usepackage{amsmath}
+\usepackage{microtype} % Optical margins FTW
+\usepackage{url}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables for horizontal lines
+\usepackage[per-mode=symbol]{siunitx}
+\usepackage{floatrow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fullpage}
+\usepackage{lipsum}
+
+
+
+\author{Loïc Amez-Droz \and Florian Reinhard}
+\title{Multimode Fibre}
+
+% Début du document
+\begin{document}
+\include{titlepage}
+\section{Procedures and results}
+\subsection{Evaluation of the numerical aperture with skewed rays}
+\subsection{Measurement of the numerical aperture}
+% distance error: 0.01mm
+\subsection{Injection for different sources}
+\subsection{Measurement of relative injection efficiency}
+
+\section{Discussion and conclusions}
+\lipsum[6]
+\end{document}
