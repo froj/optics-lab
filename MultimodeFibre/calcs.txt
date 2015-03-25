@@ -1,0 +1,26 @@
+Exercice 4.5
+============
+
+INT_Red_1 =
+
+    11691619
+
+
+INT_Red_2 =
+
+     4646630
+
+
+Ratio_no_correction =
+
+    2.5162
+
+
+INT_Dark_noise =
+
+     3303075
+
+
+Ratio =
+
+    6.2435
